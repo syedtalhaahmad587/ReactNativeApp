@@ -23,7 +23,7 @@ import {DataTable} from 'react-native-paper';
 import ImageFie from '../../../assets/61pH6i+KGTL.png';
 import Popup from "./Modal";
 
-const DashBoardScreen = () => {
+const DashBoardScreen = ({navigation}) => {
   const styles = StyleSheet.create({
     Dash: {
       marginLeft: 20,
@@ -177,7 +177,8 @@ const DashBoardScreen = () => {
       <ScrollView>
         <View>
 
-          <Text style={styles.ImgWallet}>
+          <Text style={styles.ImgWallet}
+            onPress={() => navigation.navigate("Referral")}>
             My Wallet <Image style={styles.ImgSourceBoard} source={Wallet} />{' '}
           </Text>
         </View>

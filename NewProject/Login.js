@@ -215,8 +215,6 @@ export default function Login({navigation}) {
           marginRight: 10,
           marginLeft: 10,
         }
-        
-
 
    })
  return (
@@ -227,8 +225,8 @@ export default function Login({navigation}) {
    </ImageBackground>
    <View>
    <Text style={styles.NowText}>Login</Text>
-     <Text style={styles.formLabel} >Email</Text>
-     <View style={styles.EmailText}  >
+     <Text style={styles.formLabel}>Email</Text>
+     <View style={styles.EmailText}>
      <TextInput
         style={styles.formInput}
        onChangeText={onChangeText}

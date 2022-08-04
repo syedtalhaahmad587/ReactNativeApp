@@ -8,6 +8,8 @@ import ProductScren from "../NewProject/component/screens/ProductScreen";
 import DashBoardScreen from "./component/screens/DashBoardScreen";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Referral from "../NewProject/component/screens/Referral";
+
 const Stack = createNativeStackNavigator();
 
 const SlabExchange = () => {
@@ -15,7 +17,7 @@ const SlabExchange = () => {
 
       <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Login"
           component={Login}
           options={{ unmountOnBlur: true, headerShown: false }}
@@ -35,7 +37,11 @@ const SlabExchange = () => {
         <Stack.Screen 
         options={{ title: 'DashBoard' }}
         name="DashBoard" 
-        component={DashBoardScreen} />  
+        component={DashBoardScreen} />  */}
+        <Stack.Screen 
+        options={{ title: 'Referral' }}
+        name="Referral" 
+        component={Referral} />  
       </Stack.Navigator> 
     </NavigationContainer>
     )
