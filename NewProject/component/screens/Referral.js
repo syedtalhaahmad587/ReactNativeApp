@@ -18,7 +18,7 @@ import { Text,
 import React, { Component } from 'react'
 import CopyImage from "../../../assets/fluent.png";
 
-const Referral = () => {
+const Referral = ({navigation}) => {
 
     const styles = StyleSheet.create({
         DashRef : {
@@ -112,7 +112,7 @@ const Referral = () => {
              style={styles.ShareLink}
        title="Login"
        color="#4297EC"
-       onPress={() => navigation.navigate("SigUp")}
+       onPress={() => navigation.navigate("TradeCenter")}
        />
        </View>
       </View>
