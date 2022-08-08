@@ -166,7 +166,6 @@ export default function Login({navigation}) {
            fontFamily: 'Poppins',
            fontStyle: "normal",
            fontWeight: "500",
-           
          },
 
          btn1 : {
