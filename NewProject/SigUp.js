@@ -14,11 +14,11 @@ export default function SigUp({navigation}) {
     const [number3, onChangeNumber3] = React.useState(null);
     const styles = StyleSheet.create({
       formLabel : {
-        marginLeft: 12,
-        marginTop: 5,
-        fontWeight: "bold",
-        fontFamily: "Poppins",
-        color:"#BCBCBC",
+        marginLeft: 25,
+      marginTop: 5,
+      fontWeight: "bold",
+      fontFamily: "Poppins",
+      color:"#BCBCBC",
       },
       formLabel1 :{
          marginTop: 10,
@@ -33,17 +33,19 @@ export default function SigUp({navigation}) {
            backgroundColor: "#4297EC"
         }, 
         formInput: {
-          height: 40,
-          borderColor: '#BCBCBC',
+          height: 45,
+          // borderColor: '#BCBCBC',
           borderWidth: 1,
           borderRadius: 8,
           padding: 10,
+          borderColor: "rgba(43, 67, 93, 0.18)",
           width: "100%",
-          color:"black"
+          color:"black",
+          marginBottom: 15,
 
         },
           formInput2: {
-            height: 40,
+            height: 45,
             margin: 12,
             borderColor: '#0057FF',
             borderWidth: 1,
@@ -123,7 +125,8 @@ export default function SigUp({navigation}) {
           lineHeight: 36,
           fontFamily:"Poppins",
           textAlign: "center",
-          marginTop:0
+          marginTop:0,
+          marginBottom: 25,
         },
           ImageIcon : {
              width: 70,
@@ -147,15 +150,24 @@ export default function SigUp({navigation}) {
           },
           btn12 : {
             alignContent:"center",
-             backgroundColor: "#0057FF",
-             paddingBottom: 10,
-             borderWidth: 1,
-            borderColor: "#0057FF",
-            textAlign:"center",
-            marginRight: 10,
-            marginLeft: 10,
-            marginTop: 10,
-            borderRadius: 4,
+            backgroundColor: "#4297EC",
+            paddingBottom: 10,
+            borderWidth: 1,
+            color:"#fff",
+           borderColor: "#4297EC",
+           textAlign:"center",
+           marginRight: 10,
+           marginLeft: 10,
+           marginTop: 10,
+           borderRadius: 8,
+           paddingTop:12,
+           paddingBottom:12,
+           display:"flex",
+           flexDirection:"row",
+           alignItems: "center",
+           fontFamily: 'Poppins',
+           fontStyle: "normal",
+           fontWeight: "500",
           },
 
           btn1 : {
@@ -178,10 +190,11 @@ export default function SigUp({navigation}) {
              borderWidth: 1,
             borderColor: "#B7B7B7",
             textAlign:"center",
-            marginRight: 10,
-            marginLeft: 10,
-            marginTop: 10,
+            marginRight: 24,
+            marginLeft: 24,
+            marginTop: 20,
             borderRadius: 4,
+            marginBottom: 20
           },
           btnText : {
             color: "black",
@@ -192,19 +205,19 @@ export default function SigUp({navigation}) {
           },
           ImageRun : {
             width: 25,
-            height: 25,
+            height: 30,
+
           },
           EmailText : {
-            marginRight:10,
-            marginLeft: 10,
-            marginBottom: 5,
-            marginTop: 5,
+            marginRight:24,
+           marginLeft: 24,
+           marginBottom: 5,
+           marginTop: 5,
           },
           PasswordText : {
-            marginRight:10,
-            marginLeft: 10,
-            
-             marginTop: 5,
+            marginRight:24,
+          marginLeft: 24, 
+           marginTop: 5,
           },
           accountText : {
             color: "#BCBCBC",
@@ -213,8 +226,38 @@ export default function SigUp({navigation}) {
             marginTop:8,
             marginRight: 10,
             marginLeft: 10,
+          },
+          btnSigUp : {
+            alignContent:"center",
+            backgroundColor: "#0057FF",
+            paddingBottom: 10,
+            borderWidth: 1,
+            color:"#fff",
+           borderColor: "#0057FF",
+           textAlign:"center",
+           marginRight: 10,
+           marginLeft: 10,
+           marginTop: 10,
+           borderRadius: 7,
+           display:"flex",
+           flexDirection:"row",
+           alignItems: "center",
+           fontFamily: 'Poppins',
+           fontStyle: "normal",
+           fontWeight: "500",
+           
+          },
+          Facebook : {
+            width:10,
+            height: 10,
+            margin: 10,
+          },
+          LogFacebook : {
+            marginLeft: 10,
+            marginRight: 10,
+            margin: 10,
+            
           }
-
     })
   return (
     <>
@@ -222,9 +265,11 @@ export default function SigUp({navigation}) {
         <ImageBackground source={background} style={styles.image}>
       <Image style={styles.ImageIcon} source={SlabIcon} />
     </ImageBackground>
-    <View>
+    </View>
+      
     <Text style={styles.NowText}>SigUp</Text>
-      <Text style={styles.formLabel} >Email</Text>
+    <ScrollView>
+   <Text style={styles.formLabel} >Email</Text>   
       <View style={styles.EmailText}>
       <TextInput
          style={styles.formInput}
@@ -264,26 +309,35 @@ export default function SigUp({navigation}) {
         keyboardType = 'numeric'
       />
       </View>
-      <View style={styles.formLabel12} >
-              <Button
-              style={styles.btn12}
-        title="SigUp"
-        color="#4297EC"
-        onPress={() => navigation.navigate("Home")}
-      /> 
-      </View>
+      <View style={styles.formLabel12}>
+      <TouchableOpacity>
+     <Text style={styles.btn12}
+      onPress={() => navigation.navigate("tabs")}
+     >SIGNUP</Text>      
+     </TouchableOpacity> 
+     </View>
       <View style={styles.main} >
-        <Text style={styles.accountText}  >ALready have an account?</Text>
+        <Text style={styles.accountText}>ALready have an account?</Text>
         <Text style={styles.main1} >Login</Text>
       </View>
-      </View>
       <View>
-        <Text style={styles.btn1} ><Image source={Google} style={styles.ImageRun}  /><Text style={styles.btnText1}  >Log in with Facebook</Text></Text>
+        <View style={styles.formLabel12}>
+      <TouchableOpacity>
+     <Text style={styles.btnSigUp}
+      onPress={() => navigation.navigate("tabs")}
+     ><Image styles={styles.Facebook}  source={Google}   /><Text styles={styles.LogFacebook}  >LOG IN WITH FACEBOOK</Text></Text>      
+     </TouchableOpacity> 
+     </View>
       </View> 
       <View>
-        <Text style={styles.btn2} ><Image source={Facebook} style={styles.ImageRun}  /><Text style={styles.btnText}  >Log in with google</Text></Text>
+        <Text style={styles.btn2} >
+          <Image source={Facebook} style={styles.ImageRun}  />
+          <Text style={styles.btnText}>LOG IN WITH GOOGLE</Text>
+          </Text>
       </View>
-    </View>
+      </ScrollView>
+   
+    
     
 
     </>

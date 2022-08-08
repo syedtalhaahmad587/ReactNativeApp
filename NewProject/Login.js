@@ -14,7 +14,7 @@ export default function Login({navigation}) {
    const [number3, onChangeNumber3] = React.useState(null);
    const styles = StyleSheet.create({
      formLabel : {
-      marginLeft: 12,
+      marginLeft: 25,
       marginTop: 5,
       fontWeight: "bold",
       fontFamily: "Poppins",
@@ -33,13 +33,15 @@ export default function Login({navigation}) {
           backgroundColor: "#4297EC"
        }, 
        formInput: {
-        height: 40,
-        borderColor: '#BCBCBC',
+        height: 45,
+        // borderColor: '#BCBCBC',
         borderWidth: 1,
         borderRadius: 8,
         padding: 10,
+        borderColor: "rgba(43, 67, 93, 0.18)",
         width: "100%",
-        color:"black"
+        color:"black",
+        marginBottom: 15,
          },
          formInput2: {
            height: 40,
@@ -121,7 +123,8 @@ export default function Login({navigation}) {
         lineHeight: 36,
         fontFamily:"Poppins",
         textAlign: "center",
-        marginTop:0
+        marginTop:0,
+        marginBottom: 25,
          },
          ImageIcon : {
             width: 70,
@@ -145,15 +148,25 @@ export default function Login({navigation}) {
          },
          btn12 : {
            alignContent:"center",
-            backgroundColor: "#0057FF",
+            backgroundColor: "#4297EC",
             paddingBottom: 10,
             borderWidth: 1,
-           borderColor: "#0057FF",
+            color:"#fff",
+           borderColor: "#4297EC",
            textAlign:"center",
            marginRight: 10,
            marginLeft: 10,
            marginTop: 10,
-           borderRadius: 4,
+           borderRadius: 8,
+           paddingTop:12,
+           paddingBottom:12,
+           display:"flex",
+           flexDirection:"row",
+           alignItems: "center",
+           fontFamily: 'Poppins',
+           fontStyle: "normal",
+           fontWeight: "500",
+           
          },
 
          btn1 : {
@@ -198,20 +211,22 @@ export default function Login({navigation}) {
            height: 25,
          },
          EmailText : {
-           marginRight:10,
-           marginLeft: 10,
+           marginRight:24,
+           marginLeft: 24,
            marginBottom: 5,
            marginTop: 5,
+           
          },
          PasswordText : {
-          marginRight:10,
-          marginLeft: 10, 
+          marginRight:24,
+          marginLeft: 24, 
            marginTop: 5,
         },
         accountText : {
           color: "#BCBCBC",
         },
         formLabel12 : {
+          marginTop:8,
           marginRight: 10,
           marginLeft: 10,
         }
@@ -225,7 +240,7 @@ export default function Login({navigation}) {
    </ImageBackground>
    <View>
    <Text style={styles.NowText}>Login</Text>
-     <Text style={styles.formLabel}>Email</Text>
+     <Text style={styles.formLabel}>Email</Text>  
      <View style={styles.EmailText}>
      <TextInput
         style={styles.formInput}
@@ -244,19 +259,18 @@ export default function Login({navigation}) {
        keyboardType="text"
      />
      </View>
-     <View style={styles.FormButton} >
-     <View style={styles.formLabel12} >
-             <Button
-             style={styles.btn12}
-       title="Login"
-       color="#4297EC"
-       onPress={() => navigation.navigate("SigUp")}
-       
-     /> 
+     <View style={styles.FormButton}>
+     <View style={styles.formLabel12}>
+      <TouchableOpacity>
+     <Text style={styles.btn12}
+      onPress={() => navigation.navigate("tabs")}
+     >LOGIN</Text>      
+     </TouchableOpacity> 
      </View>
-     <View style={styles.main2} >
-       <Text style={styles.accountText}   >ALready have an account?</Text>
-       <Text style={styles.main1}  >Login</Text>
+     
+     <View style={styles.main2}>
+       <Text style={styles.accountText}>ALready have an account?</Text>
+       <Text style={styles.main1} onPress={() => navigation.navigate("SigUp")}  >Login</Text>
      </View>
      </View>
      </View>
